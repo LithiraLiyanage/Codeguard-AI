@@ -1,142 +1,275 @@
-# CodeGuard AI — AI Code Review & Bug Detection Platform
+<div align="center">
 
-Production-quality full-stack portfolio project for **Full Stack Developer | AI Engineer** internship roles.
+# 🛡️ CodeGuard AI  
+### 🤖 AI Code Review & Bug Detection Platform
 
-CodeGuard AI lets users paste code, upload source files, or submit a public GitHub repository URL. The system analyzes JavaScript/TypeScript, Python, and Java code and returns defensive code review results: bugs, security issues, code smells, quality score, maintainability score, complexity score, and safe refactoring suggestions.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=800&color=22D3EE&center=true&vCenter=true&width=900&lines=AI-Powered+Code+Review+Platform;Bug+Detection+%7C+Security+Review+%7C+Complexity+Analysis;Full+Stack+Developer+%7C+AI+Engineer+Portfolio+Project" alt="Typing SVG" />
 
-## Safety Scope
-This tool is for defensive secure coding education and code quality improvement only. It does not generate exploit payloads, malware, credential theft logic, or instructions for abusing vulnerabilities.
+<br/>
 
-## Tech Stack
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-Frontend-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-AI_Service-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Python](https://img.shields.io/badge/Python-Static_Analysis-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-| Layer | Stack |
+<br/>
+
+**🚀 Production-quality full-stack AI project for Full Stack Developer and AI Engineer internship portfolios.**
+
+</div>
+
+---
+
+## 📸 Project Preview
+
+<div align="center">
+
+<img src="screenshots/codeguard.PNG" alt="CodeGuard AI Preview" width="100%" />
+
+</div>
+
+---
+
+## 🚀 Overview
+
+**CodeGuard AI** is an AI-powered code review and bug detection platform that helps developers improve code quality through **defensive static analysis**.
+
+Users can:
+
+✅ Paste code directly into the editor  
+✅ Upload source code files  
+✅ Analyze a public GitHub repository  
+✅ Detect bugs, security issues, and code smells  
+✅ View quality, maintainability, and complexity scores  
+✅ Receive safe refactoring and best-practice suggestions  
+
+Supported languages:
+
+| Language | Support |
 |---|---|
-| Frontend | React, Vite, Tailwind CSS, React Router, Axios, Monaco Editor, Recharts, Lucide React |
-| Backend | Node.js, Express.js, MongoDB, Mongoose, JWT, bcryptjs, Multer, simple-git |
-| Security | Helmet, CORS, express-rate-limit, express-validator |
-| AI Service | Python, FastAPI, Pydantic, AST parsing, Radon, rule-based static analysis |
-| Database | MongoDB |
+| 🟨 JavaScript / TypeScript | Static rule-based analysis |
+| 🐍 Python | AST parsing + Radon complexity |
+| ☕ Java | Static rule-based analysis |
 
-## Features
+---
 
-- Register/login with JWT authentication
-- Developer and admin roles
-- Paste-code analyzer with Monaco Editor
-- File upload analyzer for `.js`, `.jsx`, `.ts`, `.tsx`, `.py`, `.java`
-- Public GitHub repository analyzer
-- Defensive security issue detection
-- Bug and code-smell detection
-- Complexity and maintainability scoring
-- Review history with search/filter
-- Detailed review page
-- JSON report download
-- Admin analytics dashboard
+## 🎯 Project Purpose
 
-## Architecture
+This project was designed as a **next-level individual portfolio project** for internship roles.
 
-```text
-React Frontend
-   |
-   | REST API + JWT
-   v
-Express Backend
-   |
-   | Mongoose
-   v
-MongoDB
-   |
-   | HTTP JSON
-   v
-FastAPI AI Service
-   |
-   | AST + Static Rules
-   v
-Bugs / Security / Complexity / Suggestions
-```
+| Target Role | What This Project Shows |
+|---|---|
+| 💻 Full Stack Developer Intern | React, Node.js, REST APIs, JWT auth, MongoDB, dashboards, file uploads |
+| 🤖 AI Engineer Intern | FastAPI AI microservice, static analysis, scoring logic, language analyzers |
+| 🛡️ Secure Coding / Code Quality | Defensive security review, validation, maintainability feedback |
 
-## Run Locally
+---
 
-### 1. Start MongoDB
+## 🛡️ Safety Scope
 
-```bash
-docker compose up -d mongo
-```
+> CodeGuard AI is built only for **defensive secure coding education** and **software quality improvement**.
 
-### 2. Start AI Service
+This platform does **not** generate:
 
-```bash
-cd ai-service
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
-```
+- ❌ Exploit payloads
+- ❌ Malware logic
+- ❌ Credential theft instructions
+- ❌ Vulnerability abuse steps
+- ❌ Harmful hacking guidance
 
-macOS/Linux:
+Security findings are explained in a safe, defensive way with recommended fixes.
 
-```bash
-source venv/bin/activate
-```
+---
 
-### 3. Start Backend
+## ✨ Key Features
 
-```bash
-cd backend
-npm install
-copy .env.example .env
-npm run dev
-```
+### 👨‍💻 Developer Features
 
-### 4. Start Frontend
+- 🔐 Register and login with JWT authentication
+- 👥 Developer and admin roles
+- 🧠 Paste-code analyzer with Monaco Editor
+- 📁 File upload analyzer
+- 🌐 Public GitHub repository analyzer
+- 🐞 Bug detection
+- 🛡️ Defensive security issue detection
+- 🧹 Code smell detection
+- 📊 Quality score
+- 🧩 Maintainability score
+- ⚙️ Complexity score
+- 🔧 Refactoring suggestions
+- ✅ Best-practice recommendations
+- 🕘 Review history
+- 🔍 Search and filter reviews
+- 📄 Detailed review page
+- ⬇️ JSON report download
 
-```bash
-cd frontend
-npm install
-copy .env.example .env
-npm run dev
-```
+### 📊 Admin Features
 
-Frontend: `http://localhost:5173`  
-Backend: `http://localhost:5000`  
-AI Service: `http://localhost:8000`
+- 📌 Total reviews count
+- 👥 Users count
+- 📈 Average code quality score
+- 🧑‍💻 Reviews by language chart
+- ⚠️ Common issue analytics
+- 📋 All reviews table
+- 🕒 Recent reviews overview
 
-## Admin Account
+---
 
-Register using this email to become admin:
+## 🧰 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| 🎨 Frontend | React, Vite, Tailwind CSS |
+| 🧭 Routing | React Router |
+| 🔗 API Client | Axios |
+| 🧑‍💻 Code Editor | Monaco Editor |
+| 📊 Charts | Recharts |
+| 🎯 Icons | Lucide React |
+| ⚙️ Backend | Node.js, Express.js |
+| 🗄️ Database | MongoDB, Mongoose |
+| 🔐 Authentication | JWT, bcryptjs |
+| 📁 File Upload | Multer |
+| 🌐 GitHub Analysis | simple-git |
+| 🛡️ Backend Security | Helmet, CORS, express-rate-limit, express-validator |
+| 🤖 AI Service | Python, FastAPI, Pydantic |
+| 🧠 Static Analysis | Python AST, Radon, rule-based analyzers |
+
+---
+
+## 🏗️ System Architecture
 
 ```text
-admin@example.com
-```
+┌──────────────────────┐
+│   React Frontend      │
+│   Vite + Tailwind     │
+└──────────┬───────────┘
+           │
+           │ REST API + JWT
+           ▼
+┌──────────────────────┐
+│  Express.js Backend   │
+│  Auth + Validation    │
+└──────────┬───────────┘
+           │
+           │ Mongoose
+           ▼
+┌──────────────────────┐
+│      MongoDB          │
+│ Users + Reviews       │
+└──────────┬───────────┘
+           │
+           │ HTTP JSON
+           ▼
+┌──────────────────────┐
+│  FastAPI AI Service   │
+│ Static Code Analysis  │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Bugs / Security       │
+│ Complexity / Scores   │
+│ Refactor Suggestions  │
+└──────────────────────┘
 
-## API Endpoints
+---
 
-### Auth
+### 🧠 AI / Static Analysis Logic
 
-```text
-POST /api/auth/register
-POST /api/auth/login
-GET  /api/auth/me
-```
+CodeGuard AI uses a Python FastAPI microservice to analyze code.
 
-### Reviews
+---
 
-```text
-POST   /api/reviews/analyze-code
-POST   /api/reviews/analyze-file
-POST   /api/reviews/analyze-github
-GET    /api/reviews/history
-GET    /api/reviews/:id
-DELETE /api/reviews/:id
-```
+### 🐍 Python Analyzer
 
-### Admin
+- AST parsing
+- Syntax error detection
+- Bare except detection
+- Empty exception handler detection
+- eval() usage detection
+- exec() usage detection
+- Hardcoded secret pattern detection
+- Long function detection
+- Missing type hint suggestions
+- Radon-based complexity analysis
 
-```text
-GET /api/admin/stats
-GET /api/admin/reviews
-GET /api/admin/users
-```
+---
 
-## CV Bullet
+### 🟨 JavaScript / TypeScript Analyzer
 
-Developed an AI-powered code review platform that analyzes JavaScript, Python, and Java code to detect bugs, security issues, code smells, and complexity problems using a React frontend, Node.js backend, MongoDB, and Python FastAPI static analysis microservice.
+- console.log detection
+- var usage detection
+- == / != loose equality detection
+- eval() detection
+- dangerouslySetInnerHTML detection
+- Direct innerHTML assignment detection
+- Hardcoded secret pattern detection
+- Missing async error handling detection
+- Large file detection
+
+---
+
+### ☕ Java Analyzer
+
+- Empty catch block detection
+- System.out.println production usage detection
+- Hardcoded credential detection
+- Public mutable field detection
+- Large class detection
+- Logging framework suggestions
+- Exception handling suggestions
+
+---
+
+### 📁 Project Structure
+
+codeguard-ai/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── services/
+│   │   └── utils/
+│   └── package.json
+│
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── utils/
+│   └── package.json
+│
+├── ai-service/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── analyzer.py
+│   │   ├── python_analyzer.py
+│   │   ├── javascript_analyzer.py
+│   │   ├── java_analyzer.py
+│   │   ├── scoring.py
+│   │   └── schemas.py
+│   └── requirements.txt
+│
+├── docs/
+├── screenshots/
+│   └── codeguard.PNG
+├── docker-compose.yml
+└── README.md
+
+
+---
+
+
+### 👨‍💻 Author
+
+<div align="center">
+
+Lithira Liyanage
+Full Stack Developer | AI Engineer
