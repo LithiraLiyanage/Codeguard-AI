@@ -1,0 +1,1 @@
+const EmptyState=({title="No data found",message="Nothing to display yet."})=><div className="card p-8 text-center"><h3 className="text-lg font-semibold">{title}</h3><p className="text-slate-400 mt-2">{message}</p></div>;export default EmptyState;

@@ -1,0 +1,1 @@
+const LoadingSpinner=({label="Analyzing..."})=><div className="flex items-center gap-3 text-cyan-300"><div className="w-5 h-5 rounded-full border-2 border-cyan-300 border-t-transparent animate-spin"/><span>{label}</span></div>;export default LoadingSpinner;
