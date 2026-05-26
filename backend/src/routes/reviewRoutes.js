@@ -1,0 +1,15 @@
+const express = require("express");
+const { body } = require("express-validator");
+const { analyzeCode, analyzeFile, analyzeGithub, getHistory, getReviewById, deleteReview } = require("../controllers/reviewController");
+const { protect } = require("../middleware/authMiddleware");
+const validate = require("../middleware/validateMiddleware");
+const upload = require("../middleware/uploadMiddleware");
+const { analysisLimiter } = require("../middleware/rateLimitMiddleware");
+const router = express.Router();
+router.post("/analyze-code", protect, analysisLimiter, [ body("language").isIn(["javascript","python","java"]).withMessage("Unsupported language."), body("code").trim().isLength({min:1,max:50000}).withMessage("Code is required and must be under 50,000 characters."), body("projectName").optional().trim().isLength({max:100}).withMessage("Project name is too long."), body("fileName").optional().trim().isLength({max:120}).withMessage("File name is too long.") ], validate, analyzeCode);
+router.post("/analyze-file", protect, analysisLimiter, upload.single("codeFile"), analyzeFile);
+router.post("/analyze-github", protect, analysisLimiter, [ body("githubUrl").matches(/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/?$/).withMessage("Valid public GitHub repository URL is required."), body("projectName").optional().trim().isLength({max:100}).withMessage("Project name is too long.") ], validate, analyzeGithub);
+router.get("/history", protect, getHistory);
+router.get("/:id", protect, getReviewById);
+router.delete("/:id", protect, deleteReview);
+module.exports = router;
