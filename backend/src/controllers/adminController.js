@@ -1,0 +1,6 @@
+const Review = require("../models/Review");
+const User = require("../models/User");
+const getStats = async (req, res) => { const [reviews, users] = await Promise.all([Review.find(), User.find().select("-password")]); const totalReviews=reviews.length; const usersCount=users.length; const averageQuality=totalReviews===0?0:reviews.reduce((s,r)=>s+(r.qualityScore||0),0)/totalReviews; const byLanguageObj={}; const issueObj={}; reviews.forEach(r=>{ byLanguageObj[r.language]=(byLanguageObj[r.language]||0)+1; [...(r.bugs||[]), ...(r.securityIssues||[])].forEach(i=>issueObj[i.title]=(issueObj[i.title]||0)+1); }); res.json({ totalReviews, usersCount, averageQuality:Number(averageQuality.toFixed(2)), byLanguage:Object.entries(byLanguageObj).map(([language,count])=>({language,count})), commonIssues:Object.entries(issueObj).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([title,count])=>({title,count})), recentReviews:reviews.sort((a,b)=>b.createdAt-a.createdAt).slice(0,10) }); };
+const getReviews = async (req, res) => res.json(await Review.find().populate("user", "name email role").sort({ createdAt:-1 }));
+const getUsers = async (req, res) => res.json(await User.find().select("-password").sort({ createdAt:-1 }));
+module.exports = { getStats, getReviews, getUsers };
