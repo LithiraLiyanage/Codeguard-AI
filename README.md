@@ -83,9 +83,7 @@ Security findings are explained in a safe, defensive way with recommended fixes.
 
 ---
 
-## ✨ Key Features
-
-### 👨‍💻 Developer Features
+## 👨‍💻 Developer Features
 
 - 🔐 Register and login with JWT authentication
 - 👥 Developer and admin roles
@@ -105,7 +103,7 @@ Security findings are explained in a safe, defensive way with recommended fixes.
 - 📄 Detailed review page
 - ⬇️ JSON report download
 
-### 📊 Admin Features
+## 📊 Admin Features
 
 - 📌 Total reviews count
 - 👥 Users count
@@ -176,13 +174,13 @@ Security findings are explained in a safe, defensive way with recommended fixes.
 
 ---
 
-### 🧠 AI / Static Analysis Logic
+## 🧠 AI / Static Analysis Logic
 
 CodeGuard AI uses a Python FastAPI microservice to analyze code.
 
 ---
 
-### 🐍 Python Analyzer
+## 🐍 Python Analyzer
 
 - AST parsing
 - Syntax error detection
@@ -197,7 +195,7 @@ CodeGuard AI uses a Python FastAPI microservice to analyze code.
 
 ---
 
-### 🟨 JavaScript / TypeScript Analyzer
+## 🟨 JavaScript / TypeScript Analyzer
 
 - console.log detection
 - var usage detection
@@ -223,7 +221,7 @@ CodeGuard AI uses a Python FastAPI microservice to analyze code.
 
 ---
 
-### 📁 Project Structure
+## 📁 Project Structure
 
 codeguard-ai/
 ├── frontend/
@@ -267,7 +265,7 @@ codeguard-ai/
 ---
 
 
-### 👨‍💻 Author
+## 👨‍💻 Author
 
 <div align="center">
 
